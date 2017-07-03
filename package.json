@@ -13,11 +13,11 @@
   "keywords": [
     "javascript",
     "science",
-    "two-dimensional",
-    "2d",
     "matrix",
     "array",
-    "neural network"
+    "neural network",
+    "js",
+    "machine learning"
   ],
   "author": "AlexanderGY",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
     "ndarray-show": "^2.0.0",
-    "stream-json": "^0.4.2"
+    "stream-json": "^0.4.2",
+    "user": "0.0.0"
   }
 }
