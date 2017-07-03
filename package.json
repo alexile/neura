@@ -1,0 +1,36 @@
+{
+  "name": "neura",
+  "version": "0.0.1",
+  "description": "Neural network on JavaScript",
+  "main": "neura",
+  "scripts": {
+    "start": "neura.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderGY/neura.git"
+  },
+  "keywords": [
+    "javascript",
+    "science",
+    "two-dimensional",
+    "2d",
+    "matrix",
+    "array",
+    "neural network"
+  ],
+  "author": "AlexanderGY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderGY/neura/issues"
+  },
+  "homepage": "https://github.com/AlexanderGY/neura#readme",
+  "dependencies": {
+    "get-pixels": "^3.3.0",
+    "ndarray": "^1.0.18",
+    "ndarray-gemm": "^1.0.0",
+    "ndarray-ops": "^1.2.2",
+    "ndarray-show": "^2.0.0",
+    "stream-json": "^0.4.2"
+  }
+}
