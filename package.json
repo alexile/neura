@@ -1,10 +1,10 @@
 {
   "name": "neura",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Neural network on JavaScript",
   "main": "neura",
   "scripts": {
-    "start": "neura.js"
+    "start": "./neura.js"
   },
   "repository": {
     "type": "git",
