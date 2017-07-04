@@ -79,11 +79,11 @@ class Neura {
   }
 
   saveToFile(filename) {
-    fs.writeFileSync(filename, JSON.stringify({synapse: this.synapse}));
+    fs.writeFileSync(filename, JSON.stringify({nn: this.synapse}));
   }
 
   readFromFile(filename) {
-    return require(filename);
+    return require(filename).nn;
   }
 
   normalizeInputArray(arr) {

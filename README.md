@@ -25,17 +25,20 @@ n.run([1,0,0]);
 
 or
 ```javascript
-n.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]}).run([1, 0, 0]);
+n.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]})
+  .run([1, 0, 0]);
 ```
 
 Data can be saved in file
 ```javascript
-n.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]}).saveToFile('./output.json');
+n.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]})
+  .saveToFile('./output.json');
 ```
 
 Saved neural network synapse can be used again
 ```javascript
-n.readFromFile('./output.json').run([1, 0, 0]);
+n.readFromFile('./output.json')
+  .run([1, 0, 0]);
 ```
 
 ### Contributing:
