@@ -43,12 +43,12 @@ n.readFromFile('./output.json')
 ### For example:
 Lets create a real estate scoring (chance to be sold)
 Yes or no denoted by 1/0
-| id     | Price in M$  | Rooms |Area | Sold |
-| -------|--------------| ------|-----|------|
-| 1      | 1.12         |     3 |   25|0     |
-| 2      | 25.2         |     4 |  116|1     |
-| ...    | ...          |   ... |  ...|...   |
-| 100000 | 4.1          |     1 |   65|1     |
+|   id        |   Price in M$      |   Rooms    |   Area    |   Sold     |
+|   -------   |   --------------   |   ------   |   -----   |   ------   |
+|   1         |   1.12             |       3    |   25      |   0        |
+|   2         |   25.2             |       4    |  116      |   1        |
+|   ...       |   ...              |     ...    |  ...      |   ...      |
+|   100000    |   4.1              |       1    |   65      |   1        |
 Input is 2, 3 and 4 columns, output is 5 column.
 Now we have to train our network
 ```javascript
