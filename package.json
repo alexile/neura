@@ -1,7 +1,7 @@
 {
   "name": "neura",
-  "version": "0.0.4",
-  "description": "Neural network on JavaScript",
+  "version": "0.0.5",
+  "description": "Neura is the fast and customizable neural network for JavaScript. Worked in browser, worked in Node.js!",
   "main": "neura",
   "scripts": {
     "start": "./neura.js"
@@ -30,8 +30,6 @@
     "ndarray": "^1.0.18",
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
-    "ndarray-show": "^2.0.0",
-    "stream-json": "^0.4.2",
-    "user": "0.0.0"
+    "ndarray-show": "^2.0.0"
   }
 }

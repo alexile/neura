@@ -3,6 +3,7 @@ const show = require('ndarray-show');
 const ops = require('ndarray-ops');
 const gemm = require('ndarray-gemm');
 const fs = require('fs');
+const getPixels = require('get-pixels');
 
 /**
  * Neura class
@@ -10,10 +11,10 @@ const fs = require('fs');
  */
 class Neura {
   constructor(dt) {
-    if (typeof(dt) !== 'object') this.handleError('Only objects supported');
+    if (typeof(dt) !== 'object') throw new Error('Only objects supported');
     this.config = {
-      layers: dt.layers,
-      iterations: dt.iterations
+      layers: dt.layers || 2,
+      iterations: dt.iterations || 60000
     }
     this.layers = [];
   }
@@ -80,10 +81,29 @@ class Neura {
 
   saveToFile(filename) {
     fs.writeFileSync(filename, JSON.stringify({nn: this.synapse}));
+    return this;
   }
 
   readFromFile(filename) {
     return require(filename).nn;
+  }
+
+  getImages(path) {
+    let self = this;
+    fs.readdir(path, (err, dirs) => {
+      if (err) {
+        throw new Error('Folder doesn`t exist');
+      }
+      dirs.forEach(dir => {
+        fs.readdir(path + '/${dir}', (err, child) => {
+          if (err) {
+            throw new Error('Folder doesn`t exist');
+          }
+          
+        })
+      })
+
+    })
   }
 
   normalizeInputArray(arr) {
@@ -101,9 +121,8 @@ class Neura {
     return ndarray(new Float32Array(arr), [1, arr.length]).transpose(1, 0);
   }
 
-  handleError(err) {
-    throw new Error(err);
-  }
 }
 
+let n = new Neura({layers: 2, iterations: 10000});
+n.getImages('/home/user/Work/testData');
 module.exports = Neura;
