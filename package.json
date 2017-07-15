@@ -1,6 +1,6 @@
 {
   "name": "neura",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Neura is the fast and customizable neural network for JavaScript. Worked in browser, worked in Node.js!",
   "main": "neura",
   "scripts": {
