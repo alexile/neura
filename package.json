@@ -31,5 +31,8 @@
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
     "ndarray-show": "^2.0.0"
+  },
+  "engines": {
+    "node" : ">=6.0"
   }
 }
