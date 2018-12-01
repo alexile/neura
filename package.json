@@ -1,10 +1,11 @@
 {
   "name": "neura",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Neura is the fast and customizable neural network for JavaScript. Worked in browser, worked in Node.js!",
   "main": "neura",
   "scripts": {
-    "start": "./neura.js"
+    "start": "./dist/index.js",
+    "build": "webpack --config ./config/webpack.common.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
     "machine learning"
   ],
   "author": "AlexanderGY",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AlexanderGY/neura/issues"
   },
@@ -33,6 +34,12 @@
     "ndarray-show": "^2.0.0"
   },
   "engines": {
-    "node" : ">=6.0"
+    "node": ">=8.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   }
 }
