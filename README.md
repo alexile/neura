@@ -67,3 +67,6 @@ Create issue or PR
 git clone https://github.com/AlexanderGY/neura.git
 cd neura && npm install
 ```
+
+### Coming soon
+Image recognition
