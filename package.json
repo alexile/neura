@@ -1,45 +1,28 @@
 {
-  "name": "neura",
-  "version": "0.1.0",
-  "description": "Neura is the fast and customizable neural network for JavaScript. Worked in browser, worked in Node.js!",
-  "main": "neura",
-  "scripts": {
-    "start": "./dist/index.js",
-    "build": "webpack --config ./config/webpack.common.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexanderGY/neura.git"
-  },
-  "keywords": [
-    "javascript",
-    "science",
-    "matrix",
-    "array",
-    "neural network",
-    "js",
-    "machine learning"
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "author": "AlexanderGY",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AlexanderGY/neura/issues"
-  },
-  "homepage": "https://github.com/AlexanderGY/neura#readme",
-  "dependencies": {
-    "get-pixels": "^3.3.0",
-    "ndarray": "^1.0.18",
-    "ndarray-gemm": "^1.0.0",
-    "ndarray-ops": "^1.2.2",
-    "ndarray-show": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=8.0"
+  "scripts": {
+    "prepare": "lerna run test",
+    "bootstrap": "lerna bootstrap --force-local && lerna exec -- yarn",
+    "publish": "git add . && npx git-cz && lerna publish"
   },
   "devDependencies": {
-    "ts-loader": "^5.3.1",
-    "typescript": "^3.2.1",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-loader": "3.0.2",
+    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "lerna": "^3.20.2",
+    "typescript": "^3.7.4"
   }
 }
