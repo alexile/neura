@@ -4,7 +4,7 @@
   ],
   "scripts": {
     "prepare": "lerna run test",
-    "bootstrap": "lerna bootstrap --force-local && lerna exec -- yarn",
+    "bootstrap": "lerna bootstrap && lerna exec -- yarn",
     "publish": "git add . && npx git-cz && lerna publish"
   },
   "devDependencies": {
