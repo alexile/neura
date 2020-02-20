@@ -1,6 +1,6 @@
 import ndarray from 'ndarray'
 import ops from 'ndarray-ops'
-import gemm from 'gemm'
+import gemm from 'ndarray-gemm'
 import fs from 'fs'
 
 export default class Neura {
