@@ -1,6 +1,6 @@
 # neura
 
-Neura is the fast and customizable neural network for JavaScript
+Neura is a fast, simple and customizable neural network for JavaScript
 
 ### Requirements:
 Node.js 4.2+
@@ -8,6 +8,10 @@ Node.js 4.2+
 ### Installation:
 ```
 npm i neura
+```
+or
+```
+yarn add neura
 ```
 
 ### Usage:
@@ -60,10 +64,4 @@ net.train(data)
 finnaly
 ```javascript
 net.train(data).run([18, 2, 95]); // 0.85 => This house is likely to be sold
-```
-### Contributing:
-Create issue or PR
-```
-git clone https://github.com/AlexanderGY/neura.git
-cd neura && npm install
 ```
