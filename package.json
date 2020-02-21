@@ -1,7 +1,4 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "prepare": "lerna run test",
     "bootstrap": "lerna bootstrap && lerna exec -- yarn",

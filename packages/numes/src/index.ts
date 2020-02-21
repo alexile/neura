@@ -1,4 +1,4 @@
-import add from './utils/add'
+import add from './operations/add'
 
 export default {
     add,

@@ -88,23 +88,6 @@ export default class Neura {
         return require(filename).nn;
     }
 
-    getImages(path: string) {
-        fs.readdir(path, (err: any, dirs: any) => {
-            if (err) {
-                throw new Error('Folder doesn`t exist');
-            }
-            dirs.forEach(() => {
-                fs.readdir(path + '/${dir}', (err: any) => {
-                    if (err) {
-                        throw new Error('Folder doesn`t exist');
-                    }
-
-                })
-            })
-
-        })
-    }
-
     normalizeInputArray(arr: any) {
         if (!arr.length || !arr[0].length) {
             throw new Error('This is not an Array');
