@@ -1,12 +1,14 @@
-const addTwoMatrix = (xNdarray: Ndarray, yNdarray: Ndarray): Ndarray => {
-    if (xNdarray.length !== yNdarray.length || xNdarray[0].length !== yNdarray[0].length) {
-        throw new Error('All ndarrays must have the same dimensions')
+import {sameSize} from '../utils/validations'
+
+const sumNdarrays = (xNdarray: Ndarray, yNdarray: Ndarray): Ndarray => {
+    if (!sameSize(xNdarray, yNdarray)) {
+        throw new Error('All ndarrays must have the same size and dimensions')
     }
-    return xNdarray.map((row, rowIndex) => {
-        return row.map((cell, cellIndex) => {
-            return cell + yNdarray[rowIndex][cellIndex]
-        })
-    })
+    return xNdarray.map((row, rowIndex) =>
+        row.map((cell, cellIndex) => (
+            cell + yNdarray[rowIndex][cellIndex]
+        ))
+    )
 }
 
 const add = (...inputs: Ndarray[]): Ndarray => {
@@ -16,7 +18,7 @@ const add = (...inputs: Ndarray[]): Ndarray => {
     if (inputs.length === 1) {
         return inputs[0]
     }
-    return inputs.reduce(addTwoMatrix)
+    return inputs.reduce(sumNdarrays)
 }
 
 export default add
