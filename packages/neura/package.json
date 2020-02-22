@@ -15,7 +15,8 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
+    "test": "echo TODO",
+    "prepare": "yarn run build && yarn run test"
   },
   "dependencies": {
     "get-pixels": "^3.3.0",

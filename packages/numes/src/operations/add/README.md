@@ -1,5 +1,8 @@
 # add
-Adds multiple (more than one) 2d arrays
+Adds multiple (more than one) matrices or/and numbers
+
+[Matrix addition](https://en.wikipedia.org/wiki/Matrix_addition)
+
 ```javascript
 const ndarr1 = [
     [1, 2, 3],
