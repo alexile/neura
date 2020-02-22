@@ -1,6 +1,6 @@
 {
   "name": "numes",
-  "version": "0.1.10",
+  "version": "0.1.13",
   "description": "It's like numpy, but in ES6+ and following functional approach",
   "author": "alexile",
   "license": "MIT",
@@ -31,6 +31,5 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-jest": "^25.2.1",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {}
+  }
 }

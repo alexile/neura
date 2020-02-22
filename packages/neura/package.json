@@ -1,6 +1,6 @@
 {
   "name": "neura",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Neura is a fast and customizable neural network for JavaScript",
   "author": "alexile",
   "license": "MIT",
