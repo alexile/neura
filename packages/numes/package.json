@@ -1,6 +1,6 @@
 {
   "name": "numes",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "It's like numpy, but in ES6+ and following functional approach",
   "author": "alexile",
   "license": "MIT",
