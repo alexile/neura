@@ -1,5 +1,5 @@
-import add from './add'
-import {generateNdarray} from '../utils/generators'
+import add from './index'
+import {generateNdarray} from '../../utils/generators'
 
 describe('add', () => {
     it('two two-dimensional arrays', () => {

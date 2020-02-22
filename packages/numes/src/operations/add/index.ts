@@ -1,4 +1,4 @@
-import {sameSize} from '../utils/validations'
+import {sameSize} from '../../utils/validations'
 
 const sumNdarrays = (xNdarray: Ndarray, yNdarray: Ndarray): Ndarray => {
     if (!sameSize(xNdarray, yNdarray)) {
