@@ -1,9 +1,8 @@
 # transpose
 Flips a matrix over its diagonal, switching columns to rows
 
-[Transpose of a matrix](https://en.wikipedia.org/wiki/Transpose)
+Wiki: [Transpose of a matrix](https://en.wikipedia.org/wiki/Transpose)
 
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Matrix_transpose.gif/200px-Matrix_transpose.gif "Matrix Transpose")
 ```javascript
 const ndarr = [
     [1, 2, 3],
@@ -22,3 +21,4 @@ the `result` is
     [3, 6]
 ]
 ```
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Matrix_transpose.gif/200px-Matrix_transpose.gif "Matrix Transpose")

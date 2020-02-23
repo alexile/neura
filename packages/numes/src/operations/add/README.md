@@ -1,7 +1,7 @@
 # add
 Adds multiple (more than one) matrices or/and numbers
 
-[Matrix addition](https://en.wikipedia.org/wiki/Matrix_addition)
+Wiki: [Matrix addition](https://en.wikipedia.org/wiki/Matrix_addition)
 
 ```javascript
 const ndarr1 = [
