@@ -8,6 +8,6 @@ export const sameSize = (xMatrix: Matrix, ...restMatrix: Matrix[]): boolean => {
     })
 }
 
-export const validNdarray = (...input: Matrix[]): boolean => {
+export const validMatrix = (...input: (Matrix | number)[]): boolean => {
     return !input.some(item => !(Array.isArray(item) && Array.isArray(item[0])))
 }

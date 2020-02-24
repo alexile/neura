@@ -1,4 +1,4 @@
-import {sameSize, validNdarray} from './validations'
+import {sameSize, validMatrix} from './validations'
 
 const ops = {
     add: (n1: number, n2: number) => n1 + n2,
@@ -39,7 +39,7 @@ export const compute = (operation: string, ...inputs: (Matrix | number)[]): Matr
         return inputs[0]
     }
     return inputs.reduce((xInput, yInput) => {
-        if (validNdarray(xInput, yInput)) {
+        if (validMatrix(xInput, yInput)) {
             return computeMatrices(operation, xInput as Matrix, yInput as Matrix)
         }
         const isXInputNumber = typeof xInput === 'number'

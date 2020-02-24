@@ -1,6 +1,6 @@
 import random from './index'
 import {getSize} from '../../utils/matrix'
-import {validNdarray} from '../../utils/validations'
+import {validMatrix} from '../../utils/validations'
 
 describe('random', () => {
     it('should generate a random matrix', () => {
@@ -9,6 +9,6 @@ describe('random', () => {
 
         expect(size.rows).toBe(3)
         expect(size.cols).toBe(5)
-        expect(validNdarray(matrix)).toBeTruthy()
+        expect(validMatrix(matrix)).toBeTruthy()
     })
 })
