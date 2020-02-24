@@ -20,7 +20,7 @@ export default class Neura {
     }
 
     /**
-     * Deriv and nonlinear sigmoid func
+     * Deriv and nonlinear sigmoid.ts func
      * Looking for more info? https://en.wikipedia.org/wiki/Sigmoid_function
      */
     sigmoid(ndArr: any, isDeriv?: boolean) {

@@ -19,8 +19,8 @@
     "prepare": "yarn run build && yarn run test"
   },
   "dependencies": {
-    "get-pixels": "^3.3.0",
     "ndarray": "^1.0.18",
+    "numes": "^0.1.21",
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
     "ndarray-show": "^2.0.0"
