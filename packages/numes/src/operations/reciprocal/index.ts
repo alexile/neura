@@ -1,4 +1,4 @@
-const reciprocal = (input: Ndarray | number): Ndarray | number => {
+const reciprocal = (input: Matrix | number): Matrix | number => {
     if (typeof input === 'number') {
         return 1 / input
     }

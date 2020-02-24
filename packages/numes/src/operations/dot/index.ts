@@ -1,4 +1,4 @@
-const dot = (...input: Ndarray[]) => {
+const dot = (...input: Matrix[]) => {
     return input
 }
 

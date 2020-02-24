@@ -1,11 +1,11 @@
 import dot from './index'
 
-describe('multiply', () => {
-    it('should multiply two matrices', () => {
-        const xNdarray = [[1, 2, 3], [4, 5, 6]]
-        const yNdarray = [[7, 8], [9, 10], [11, 12]]
+describe('dot', () => {
+    it('should multiply two matrices and return a dot product', () => {
+        const xMatrix = [[1, 2, 3], [4, 5, 6]]
+        const yMatrix = [[7, 8], [9, 10], [11, 12]]
         // const resultNdarray = [[58, 64], [139, 154]]
 
-        expect(dot(xNdarray, yNdarray)).toBeTruthy()
+        expect(dot(xMatrix, yMatrix)).toBeTruthy()
     })
 })

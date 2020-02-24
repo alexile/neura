@@ -1,6 +1,6 @@
 import {compute} from '../../utils/matrix'
 
-const add = (...inputs: (Ndarray | number)[]): Ndarray | number => {
+const add = (...inputs: (Matrix | number)[]): Matrix | number => {
     return compute('add', ...inputs)
 }
 

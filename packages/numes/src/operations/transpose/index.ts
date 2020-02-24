@@ -1,5 +1,5 @@
-const transpose = (ndarray: Ndarray): Ndarray => {
-    return ndarray[0].map((_, cellIndex) => ndarray.map(row => row[cellIndex]))
+const transpose = (matrix: Matrix): Matrix => {
+    return matrix[0].map((_, cellIndex) => matrix.map(row => row[cellIndex]))
 }
 
 export default transpose

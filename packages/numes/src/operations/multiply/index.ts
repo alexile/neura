@@ -1,7 +1,7 @@
 import {compute} from '../../utils/matrix'
 
-const multiply = (...input: (Ndarray | number)[]): Ndarray | number => {
-    return compute('mul', ...input)
+const multiply = (...input: (Matrix | number)[]): Matrix | number => {
+    return compute('multiply', ...input)
 }
 
 export default multiply

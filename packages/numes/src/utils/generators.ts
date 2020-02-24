@@ -1,4 +1,4 @@
-export const generateNdarray = ({ rows, cols, defaultValue }: NdarraySize & {defaultValue?: number}): Ndarray => {
+export const generateMatrix = ({ rows, cols, defaultValue }: MatrixSize & {defaultValue?: number}): Matrix => {
     return Array(rows).fill([]).map((_ => Array(cols).fill(0).map(value => {
         if (defaultValue) {
             return defaultValue

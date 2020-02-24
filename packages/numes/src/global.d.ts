@@ -1,6 +1,6 @@
-declare type Ndarray = number[][]
+declare type Matrix = number[][]
 
-declare type NdarraySize = {
+declare type MatrixSize = {
     rows: number,
     cols: number,
 }
