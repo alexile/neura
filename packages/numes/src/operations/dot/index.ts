@@ -1,4 +1,4 @@
-const dotMatricies = (xMatrix: Matrix, yMatrix: Matrix): Matrix => {
+const dotMatrices = (xMatrix: Matrix, yMatrix: Matrix): Matrix => {
     const result: Matrix = []
     for (let i = 0; i < xMatrix.length; i++) {
         result[i] = []
@@ -14,7 +14,7 @@ const dotMatricies = (xMatrix: Matrix, yMatrix: Matrix): Matrix => {
 }
 
 const dot = (...input: Matrix[]) => {
-    return input.reduce(dotMatricies)
+    return input.reduce(dotMatrices)
 }
 
 export default dot
