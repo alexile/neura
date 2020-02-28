@@ -1,6 +1,6 @@
 {
   "name": "neura",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Neura is a fast and customizable neural network for JavaScript",
   "author": "alexile",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
     "ndarray-show": "^2.0.0",
-    "numes": "^0.1.28"
+    "numes": "^0.1.29"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
