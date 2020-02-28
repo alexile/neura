@@ -9,6 +9,7 @@ interface Options {
 const useBackpropagation = (input: Matrix, output: Matrix, options: Options) => {
     const transposedOutput = transpose(output)
     const {cols} = shape(input)
+    console.log(input, cols, random)
     const synapses = [subtract(multiply(2, random(cols, 1)))]
     const layers = []
     const errors = []
@@ -22,6 +23,7 @@ const useBackpropagation = (input: Matrix, output: Matrix, options: Options) => 
         synapses[0] = add(synapses[0], dot(transpose(layers[0]), deltas[1]))
     }
 
+    console.log(layers[1])
     return layers[1]
 }
 
