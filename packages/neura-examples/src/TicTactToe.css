@@ -18,6 +18,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.TicTactToe__cell:hover {
+    background-color: #ffffff22;
+}
+
+.TicTactToe__playerSign {
+    color: #ffffff;
+    background-color: #212121;
 }
 
 .TicTactToe__controls {

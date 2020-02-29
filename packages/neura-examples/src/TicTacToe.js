@@ -14,11 +14,17 @@ const TicTacToe = () => {
     const [yNN, setYNN] = useState(null)
     const [ySteps, setYSteps] = useState([])
     const [delay, setDelay] = useState(1)
+    const [player, setPlayer] = useState(undefined)
+    const [preventTraining, setPreventTraining] = useState(false)
+
+    const reversePlayers = {x: 'y', y: 'x'}
 
     const reset = () => {
         setTimeout(() => {
             cleanRoundData()
-            return setTurn('x')
+            if (!preventTraining) {
+                setTurn('x')
+            }
         }, delay)
     }
 
@@ -96,7 +102,7 @@ const TicTacToe = () => {
     }
     //xNN = ✕ = 1
     useEffect(() => {
-        if (turn === 'x') {
+        if (turn === 'x' && player !== 'x') {
             const trainData = xNN || train(defaultInput, defaultOutput, {iterations: 10000})
             const targetFields = field.map((cell, index) => {
                 if (!cell) {
@@ -127,7 +133,7 @@ const TicTacToe = () => {
 
     //yNN = ○ = -1
     useEffect(() => {
-        if (turn === 'y') {
+        if (turn === 'y' && player !== 'y') {
             const trainData = yNN || train(defaultInput, defaultOutput, {iterations: 10000})
             const targetFields = field.map((cell, index) => {
                 if (!cell) {
@@ -155,23 +161,43 @@ const TicTacToe = () => {
         }
     }, [turn])
 
+    const onClickCell = (index) => {
+        if (player && !field[index]) {
+            const nextField = [...field]
+            nextField[index] = player === 'x' ? 1 : -1
+            setField(nextField)
+            const gameStatus = computeGameStatus()
+            if (!gameStatus) {
+                setTurn(reversePlayers[player])
+            }
+        }
+    }
+
+    const playGame = () => {
+        // const player = Math.random() > 0.5 ? 'x' : 'y'
+        const player = 'x'
+        setPlayer(player)
+        setPreventTraining(true)
+        setTurn('x')
+    }
+
     return (
         <div className={'TicTactToe'}>
             <div className={'TicTactToe__wrapper'}>
                 <div>
-                    ✕ {gameStat.x}
+                    {player === 'x' && <span className={'TicTactToe__playerSign'}>You</span>}{' '}✕ {gameStat.x}
                 </div>
                 <div className={'TicTactToe__field'}>
                     {field.map((cell, index) => {
                         return (
-                            <div key={index} className={'TicTactToe__cell'}>
+                            <div key={index} className={'TicTactToe__cell'} onClick={() => onClickCell(index)}>
                                 {cell === 1 ? '✕' : cell === -1 ? '○' : ''}
                             </div>
                         )
                     })}
                 </div>
                 <div>
-                    ○ {gameStat.y}
+                    ○ {gameStat.y}{' '}{player === 'y' && <span className={'TicTactToe__playerSign'}>You</span>}
                 </div>
             </div>
             <div className={'TicTactToe__throttling'}>
@@ -181,6 +207,7 @@ const TicTacToe = () => {
             <div className={'TicTactToe__controls'}>
                 <button onClick={startTraining}>Training</button>
                 <button onClick={resetTraining}>Reset</button>
+                <button title={'You must train the neural network first'} onClick={playGame} disabled={(gameStat.x + gameStat.y + gameStat.draw) < 50}>Play</button>
             </div>
             <div>
                 = {gameStat.draw}
