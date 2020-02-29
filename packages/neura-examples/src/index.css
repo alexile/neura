@@ -7,7 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  appearance: none;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  color: #212121;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 1;
 }

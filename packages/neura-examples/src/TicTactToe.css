@@ -1,0 +1,40 @@
+.TicTactToe {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 1rem;
+    justify-content: center;
+}
+
+.TicTactToe__field {
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: repeat(3, 8rem);
+    grid-template-rows: repeat(3, 8rem);
+}
+
+.TicTactToe__cell {
+    background-color: #ffffff77;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TicTactToe__controls {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+}
+
+.TicTactToe__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+.TicTactToe__throttling {
+    display: flex;
+    flex-direction: column;
+}
