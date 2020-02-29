@@ -6,13 +6,20 @@ interface Options {
     iterations: number,
 }
 
-const useBackpropagation = (input: Matrix, output: Matrix, options: Options) => {
+interface TrainOutput {
+    layers: Matrix[],
+    synapses: Matrix[],
+    errors: Matrix[],
+    deltas: Matrix[],
+}
+
+export const train = (input: Matrix, output: Matrix, options: Options): TrainOutput => {
     const transposedOutput = transpose(output)
     const {cols} = shape(input)
-    const synapses = [subtract(multiply(2, random(cols, 1)))]
-    const layers = []
-    const errors = []
-    const deltas = []
+    const synapses: Matrix[] = [subtract(multiply(2, random(cols, 1)))]
+    const layers: Matrix[] = []
+    const errors: Matrix[] = []
+    const deltas: Matrix[] = []
 
     for (let i = 0; i < options.iterations; i++) {
         layers[0] = input
@@ -22,8 +29,9 @@ const useBackpropagation = (input: Matrix, output: Matrix, options: Options) => 
         synapses[0] = add(synapses[0], dot(transpose(layers[0]), deltas[1]))
     }
 
-    console.log(layers[1])
-    return layers[1]
+    return {layers, synapses, deltas, errors}
 }
 
-export default useBackpropagation
+export const run = (input: Matrix, trainData: TrainOutput): number => {
+    return sigmoid(dot(input, trainData.synapses[0]))[0][0]
+}

@@ -8,21 +8,13 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
-  "engines": {
-    "node": ">=12",
-    "npm": ">=6"
-  },
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
-    "prepare": "yarn run build && yarn run test"
+    "prepare": "yarn run build"
   },
   "dependencies": {
-    "ndarray": "^1.0.18",
-    "ndarray-gemm": "^1.0.0",
-    "ndarray-ops": "^1.2.2",
-    "ndarray-show": "^2.0.0",
     "numes": "^0.1.29"
   },
   "devDependencies": {
@@ -39,5 +31,9 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-jest": "^25.2.1",
     "typescript": "^3.7.5"
-  }
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "engineStrict": true
 }

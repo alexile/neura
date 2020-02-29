@@ -1,49 +1,45 @@
 # neura
 
-Neura is a fast, simple and customizable neural network for JavaScript
+Neura is a fast, simple and customizable neural network for JavaScript.
+
+It doesn't use classes or external libraries (like `ndarray`). All data should be just a regular native 2-d arrays (e.g. `[[1, 2, 3], [4, 5, 6]]`). All operations are pure functions, so neura doesn't store your data anywhere. The methods always return some sort of results or/and metadata.
 
 ### Requirements:
-Node.js 4.2+
+Node.js 8+
 
 ### Installation:
 ```
 npm i neura
-```
-or
-```
+# or
 yarn add neura
 ```
 
 ### Usage:
-Initialize
+Import `neura`
 ```javascript
-const Neura = require('neura');
-const net = new Neura({layers: 2, iterations: 10000});
+import neura from 'neura'
+// or
+import {train, run} from 'neura'
+// or
+const neura = require('neura')
 ```
 
-Add train data and run
+Train the neural network using data sets (e.g. `xor`)
 ```javascript
-net.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]});
-net.run([1,0,0]);
+const trainOutput = train(
+    // inputs
+    [[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 1]],
+    // known outputs/results for the inputs, respectively
+    [[0, 0, 1, 1]],
+    // options
+    {iterations: 10000}
+)
+```
+Get the results for some unknown cases
+```javascript
+const result = run([[0, 0, 0]])
 ```
 
-or
-```javascript
-net.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]})
-  .run([1, 0, 0]);
-```
-
-Data can be saved in file
-```javascript
-net.train({input: [[1, 0, 0],[0, 1, 1],[1, 1, 0]], output: [0, 0, 1]})
-  .saveToFile('./output.json');
-```
-
-Saved neural network synapse can be used again
-```javascript
-net.readFromFile('./output.json')
-  .run([1, 0, 0]);
-```
 ### For example:
 Let's create a real estate scoring (chance of some property to be sold)
 Yes or no denoted by 1/0
@@ -55,13 +51,26 @@ Yes or no denoted by 1/0
 |   ...       |   ...              |     ...    |  ...      |   ...      |
 |   100000    |   4.1              |       1    |   65      |   1        |
 
-Input is 2, 3 and 4 columns, output is 5 column.
-Now we have to train our network
+`input` is 2, 3 and 4 columns (e.g. `[[1.12, 3, 25], ...]`), output is 5 column (just put all results to the single row, e.g. `[[0, 1, ..., 1]]`
+
+First of all, let's train the network using the data above
 ```javascript
-const data = sellingChanceData;
-net.train(data)
+const trainOutput = train(input, output, {iterations: 100000})
 ```
-finnaly
+find the result for some unsold house
 ```javascript
-net.train(data).run([18, 2, 95]); // 0.85 => This house is likely to be sold
+run([[18, 2, 95]], trainOutput) // 0.85 => This house is likely to be sold
+```
+
+### Options
+- `iterations` is the number of iterations for the error backpropagation. It affects how precise are results, however  it also can overtrain the network.
+
+TODO 
+
+### Build & tests
+```
+# Run tests
+yarn run test
+# Build the distributive
+yarn run build
 ```

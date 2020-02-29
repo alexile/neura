@@ -17,7 +17,7 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
-    "prepare": "yarn run test && yarn run build"
+    "prepare": "yarn run build"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
