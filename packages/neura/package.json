@@ -1,6 +1,6 @@
 {
   "name": "neura",
-  "version": "0.1.29",
+  "version": "1.0.0",
   "description": "Neura is a fast and customizable neural network for JavaScript",
   "author": "alexile",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "prepare": "yarn run build"
   },
   "dependencies": {
-    "numes": "^0.1.29"
+    "numes": "^1.0.0"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
