@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react'
 import './TicTactToe.css'
 import {train, run} from 'neura'
 
-const defaultInput = [Array(9).fill(0)]
-const defaultOutput = [[0]]
+const defaultXInput = [new Array(9).fill(0)]
+const defaultXOutput = [[0]]
+
+const defaultYInput = [[0, 0, 1, 0, 1, 0, 0, 0, 1]]
+const defaultYOutput = [[1]]
 
 const TicTacToe = () => {
     const [gameStat, setGameStat] = useState({x: 0, y: 0, draw: 0})
@@ -20,12 +23,17 @@ const TicTacToe = () => {
     const reversePlayers = {x: 'y', y: 'x'}
 
     const reset = () => {
-        setTimeout(() => {
+        const callback = () => {
             cleanRoundData()
             if (!preventTraining) {
                 setTurn('x')
             }
-        }, delay)
+        }
+        if (delay) {
+            setTimeout(callback, delay)
+        } else {
+            callback()
+        }
     }
 
     const cleanRoundData = () => {
@@ -40,6 +48,15 @@ const TicTacToe = () => {
         setXNN(null)
         setYNN(null)
         setGameStat({x: 0, y: 0, draw: 0})
+    }
+    const changeTurn = () => {
+        if (delay) {
+            setTimeout(() => {
+                setTurn(reversePlayers[turn])
+            }, delay)
+        } else {
+            setTurn(reversePlayers[turn])
+        }
     }
     const computeGameStatus = () => {
         const patterns = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6]]
@@ -84,11 +101,11 @@ const TicTacToe = () => {
             return true
         } else if (!field.some(cell => !cell)) {
             if (xSteps.length) {
-                const trainXOutput = train(xSteps, [new Array(xSteps.length).fill(0)], {initialSynapse: xNN.synapses[0], iterations: 10000})
+                const trainXOutput = train(xSteps, [new Array(xSteps.length).fill(0.5)], {initialSynapse: xNN.synapses[0], iterations: 10000})
                 setXNN(trainXOutput)
             }
             if (ySteps.length) {
-                const trainYOutput = train(ySteps, [new Array(ySteps.length).fill(0)], {initialSynapse: yNN.synapses[0], iterations: 10000})
+                const trainYOutput = train(ySteps, [new Array(ySteps.length).fill(0.5)], {initialSynapse: yNN.synapses[0], iterations: 10000})
                 setYNN(trainYOutput)
             }
             setGameStat({
@@ -103,7 +120,7 @@ const TicTacToe = () => {
     //xNN = ✕ = 1
     useEffect(() => {
         if (turn === 'x' && player !== 'x') {
-            const trainData = xNN || train(defaultInput, defaultOutput, {iterations: 10000})
+            const trainData = xNN || train(defaultXInput, defaultXOutput, {iterations: 10000})
             const targetFields = field.map((cell, index) => {
                 if (!cell) {
                     const dataSet = [...field]
@@ -126,7 +143,7 @@ const TicTacToe = () => {
 
             const gameStatus = computeGameStatus()
             if (!gameStatus) {
-                setTurn('y')
+                changeTurn()
             }
         }
     }, [turn])
@@ -134,7 +151,7 @@ const TicTacToe = () => {
     //yNN = ○ = -1
     useEffect(() => {
         if (turn === 'y' && player !== 'y') {
-            const trainData = yNN || train(defaultInput, defaultOutput, {iterations: 10000})
+            const trainData = yNN || train(defaultYInput, defaultYOutput, {iterations: 10000})
             const targetFields = field.map((cell, index) => {
                 if (!cell) {
                     const dataSet = [...field]
@@ -154,9 +171,10 @@ const TicTacToe = () => {
                 ...ySteps,
                 nextField
             ])
+
             const gameStatus = computeGameStatus()
             if (!gameStatus) {
-                setTurn('x')
+                changeTurn()
             }
         }
     }, [turn])
@@ -202,7 +220,7 @@ const TicTacToe = () => {
             </div>
             <div className={'TicTactToe__throttling'}>
                 <label htmlFor="delay">Throttling ({delay})</label>
-                <input id={'delay'} type="range" value={delay} min={1} max={1000} onChange={event => setDelay(event.currentTarget.value)}/>
+                <input id={'delay'} type="range" value={delay} min={1} max={2000} onChange={event => setDelay(event.currentTarget.value)}/>
             </div>
             <div className={'TicTactToe__controls'}>
                 <button onClick={startTraining}>Training</button>

@@ -1,5 +1,7 @@
 # neura-examples
 
+> NB: You need to train the network at least 50 times before you can join the game.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

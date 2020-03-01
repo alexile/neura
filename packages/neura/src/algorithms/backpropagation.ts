@@ -4,7 +4,8 @@ import derivative from '../operations/derivative'
 
 interface Options {
     iterations: number,
-    initialSynapse: Matrix,
+    initialSynapse?: Matrix,
+    initialNetwork?: TrainOutput,
 }
 
 interface TrainOutput {
@@ -17,7 +18,8 @@ interface TrainOutput {
 export const train = (input: Matrix, output: Matrix, options: Options): TrainOutput => {
     const transposedOutput = transpose(output)
     const {cols} = shape(input)
-    const synapses: Matrix[] = [options.initialSynapse || subtract(multiply(2, random(cols, 1)))]
+    const initialSynapse = (options.initialNetwork && options.initialNetwork.synapses[0]) || options.initialSynapse || subtract(multiply(2, random(cols, 1)))
+    const synapses: Matrix[] = [initialSynapse]
     const layers: Matrix[] = []
     const errors: Matrix[] = []
     const deltas: Matrix[] = []

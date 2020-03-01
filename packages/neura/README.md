@@ -40,7 +40,10 @@ Get the results for some unknown cases
 const result = run([[0, 0, 0]])
 ```
 
-### For example:
+### Tic-Tac-Toe AI
+There's [a browser tic-tac-toe game](https://github.com/alexile/neura/tree/master/packages/neura-examples), where 2 AI teach each other using `neura`. You can also play against them. The app is made with `create-react-app`, so you can install, try and modify it easily.
+
+### Another example
 Let's create a real estate scoring (chance of some property to be sold)
 Yes or no denoted by 1/0
 
@@ -63,7 +66,9 @@ run([[18, 2, 95]], trainOutput) // 0.85 => This house is likely to be sold
 ```
 
 ### Options
-- `iterations` is the number of iterations for the error backpropagation. It affects how precise are results, however  it also can overtrain the network.
+- `iterations` (required) is the number of iterations for the error backpropagation. It affects how precise are results, however, it also can overtrain the network.
+- `initialSynapse` train the existing neural network again using another initial synapse
+- `initialNetwork` re-train the existing neural network using some extra data
 
 TODO 
 
