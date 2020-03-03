@@ -1,13 +1,9 @@
 const dotMatrices = (xMatrix: Matrix, yMatrix: Matrix): Matrix => {
-    const result: Matrix = []
+    const result: Matrix = new Array(xMatrix.length).fill([]).map(_ => [])
+
     for (let i = 0; i < xMatrix.length; i++) {
-        result[i] = []
         for (let j = 0; j < yMatrix[0].length; j++) {
-            let sum = 0
-            for (let k = 0; k < xMatrix[0].length; k++) {
-                sum += xMatrix[i][k] * yMatrix[k][j]
-            }
-            result[i][j] = sum
+            result[i][j] = xMatrix[0].reduce((sum, _, k) => (sum + xMatrix[i][k] * yMatrix[k][j]), 0)
         }
     }
     return result
