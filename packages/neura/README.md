@@ -37,7 +37,7 @@ const trainOutput = train(
 ```
 Get the results for some unknown cases
 ```javascript
-const result = run([[0, 0, 0]])
+const result = run([[0, 0, 0]], trainOutput) // 1
 ```
 
 ### Tic-Tac-Toe AI
