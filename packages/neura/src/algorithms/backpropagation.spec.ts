@@ -11,5 +11,6 @@ describe('backpropagation', () => {
         expect(Math.round(run([[0, 0, 0]], trainOutput))).toBeTruthy()
         expect(Math.round(run([[0, 0, 1]], trainOutput))).toBeFalsy()
         expect(Math.round(run([[0, 0, 0]], trainOutput))).toBeTruthy()
+        expect(Math.round(run([[0, 1, 0]], trainOutput))).toBeFalsy()
     })
 })
