@@ -8,11 +8,10 @@ const dotMatrices = (xMatrix: Matrix, yMatrix: Matrix): Matrix => {
     const {rows} = shape(xMatrix)
     const {cols} = shape(yMatrix)
 
-    return new Array(rows).fill(undefined).map((row = [], i) => {
-        for (let j = 0; j < cols; j++) {
-            row[j] = xMatrix[0].reduce((sum, _, k) => (sum + xMatrix[i][k] * yMatrix[k][j]), 0)
-        }
-        return row
+    return new Array(rows).fill(undefined).map((row: any[] = new Array(cols).fill(undefined), i) => {
+        return row.map((_, j) => {
+            return xMatrix[0].reduce((sum, _, k) => (sum + xMatrix[i][k] * yMatrix[k][j]), 0)
+        })
     })
 }
 
