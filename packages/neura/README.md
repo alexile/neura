@@ -1,8 +1,8 @@
 # neura
 
-Neura is a fast, simple and customizable neural network for JavaScript.
+Neura is an intuitive, fast, simple and customizable neural network for JavaScript.
 
-It doesn't use classes or external libraries (like `ndarray`). All data should be just a regular native 2-d arrays (e.g. `[[1, 2, 3], [4, 5, 6]]`). All operations are pure functions, so neura doesn't store your data anywhere. The methods always return some sort of results or/and metadata.
+It doesn't use classes or external libraries (e.g. `ndarray`). All data should be just a regular native 2-d arrays (e.g. `[[1, 2, 3], [4, 5, 6]]`). All operations are pure functions, so neura doesn't store your data anywhere. The methods always return some sort of results or/and metadata.
 
 ### Requirements:
 Node.js 8+
