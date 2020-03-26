@@ -26,6 +26,9 @@ const neura = require('neura')
 
 Train the neural network using data sets (e.g. `xor`)
 ```javascript
+const neura = require('neura')
+const train = neura.train
+const run = neura.run
 const trainOutput = train(
     // inputs
     [[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 1]],
@@ -34,9 +37,7 @@ const trainOutput = train(
     // options
     {iterations: 10000}
 )
-```
-Get the results for some unknown cases
-```javascript
+// Get the results for some unknown cases
 const result = run([[0, 0, 0]], trainOutput) // 1
 ```
 
