@@ -35,5 +35,6 @@
   "engines": {
     "node": ">=8"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "gitHead": "7e7ba4ac9cb7106a24690c9852a1335070bacbac"
 }
