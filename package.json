@@ -3,6 +3,10 @@
   "author": "alexile",
   "private": false,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexile/neura"
+  },
   "scripts": {
     "prepare": "lerna run test",
     "bootstrap": "lerna bootstrap && lerna exec -- yarn",
