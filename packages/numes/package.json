@@ -2,16 +2,16 @@
   "name": "numes",
   "version": "1.0.15",
   "description": "Lightweight matrix operations",
-  "author": "alexile",
-  "license": "MIT",
+  "author": {
+    "name": "alexile",
+    "email": "obsmyprof@gmail.com"
+  },
   "private": false,
+  "license": "MIT",
   "main": "./dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "engines": {
-    "node": ">=8"
-  },
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
@@ -19,19 +19,22 @@
     "prepare": "yarn run build"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.10",
+    "@types/jest": "^27.4.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
-    "cross-env": "^7.0.2",
-    "jest": "^26.4.2",
-    "numes": "latest",
-    "rollup": "^2.26.6",
+    "cross-env": "^7.0.3",
+    "jest": "^27.4.7",
+    "rollup": "^2.64.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.27.2",
-    "ts-jest": "^26.3.0",
-    "typescript": "^4.0.2"
+    "rollup-plugin-typescript2": "^0.31.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.4"
   },
+  "engines": {
+    "node": ">=8"
+  },
+  "engineStrict": true,
   "gitHead": "7e7ba4ac9cb7106a24690c9852a1335070bacbac"
 }
